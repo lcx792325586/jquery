@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            float: left;
+            padding-left: 5px;
+            padding-right: 5px;
+            list-style: none;
+            line-height: 30px;
+            background-color: beige;
+
+
+        }
+
+        .tab_list {
+
+            height: 30px;
+            background-color: #c7f7f7;
+        }
+
+        .item {
+            display: none;
+        }
+
+        .current {
+
+            background-color: red;
+
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+    <script src="js/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+    <div class="tab_list">
+        <ul>
+            <li class="current">商品介绍</li>
+            <li>规格包装</li>
+            <li>客服电话</li>
+            <li>售后评价</li>
+        </ul>
+
+
+
+    </div>
+    <div class="tab_con">
+        <div class="item show">
+
+            商品介绍 模块
+        </div>
+        <div class="item">
+
+            规格包装
+        </div>
+        <div class="item">
+            客服电话
+
+        </div>
+        <div class="item">
+
+            售后评价
+        </div>
+
+
+
+
+
+    </div>
+    <script>
+
+        $(function () {
+            // 1.点击小li 当前li添加current类 其余兄弟移除类
+            $('.tab_list ul li').click(function () {
+
+                $(this).addClass('current');
+                $(this).siblings().removeClass('current');
+
+                //点击小li 获取当前的索引号
+                var index = $(this).index();
+                //通过索引号显示栏目界面
+
+                $('.tab_con .item').eq(index).show().siblings().hide();
+
+
+            });
+
+
+        })
+
+
+    </script>
+</body>
+
+</html>

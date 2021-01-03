@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <style>
+        div {
+            /* //display: none; */
+
+            background-color: violet;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <button>上拉</button>
+    <button>下拉</button>
+    <button>toggle</button>
+    <div></div>
+    <script>
+        $(function () {
+
+            $('button').eq(0).hover(function () {
+
+                $('div').slideUp('nomal', function () {
+                    console.log('show');
+                });
+
+            });
+            $('button').eq(1).hover(function () {
+
+                $('div').slideDown(2000, function () {
+                    console.log('hide');
+                });
+
+            });
+            $('button').eq(2).click(function () {
+
+                $('div').slideToggle(function () {
+                    console.log('toggle');
+                });
+
+            });
+
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+    <div>我是div</div>
+    <div>我是div</div>
+    <div>我是div</div>
+    <div>我是div</div>
+
+    <ul class='father'>
+        <li class='son1'>我是ul li</li>
+        <li class='son2'>我是ul li</li>
+        <li class='son3'>我是ul li</li>
+        <li class='son4'>我是ul li <a href=""></a> </li>
+    </ul>
+    <script>
+        $(function () {
+
+            $('div').css('background', 'red');//在选取div的时候循环给每个div修改背景颜色
+            $('ul li').css('font-size', '20px');
+            $('ul li').css('list-style', 'none');
+            $('ul li:first').css('color', 'green');
+            $('ul li:even').css('color', 'red');
+            $('ul li:odd').css('color', 'blue');
+            $('ul li:eq(3)').css('color', 'pink');
+            console.log($('ul li').parent());//只选亲爸爸
+            console.log($('.father').children('li'));//选取所有亲儿子
+            console.log($('.father').find('li'));
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+<script>
+
+    $(function () {
+
+        var mydiv = document.querySelector('div');
+        console.log("dom信息:" + mydiv.offsetWidth);
+        // dom转换为jquery
+        $(mydiv).hide();//mydiv 不用打引号
+
+
+        $('div').offsetWidth;
+        console.log('jQuery信息:' + $('div').offsetWidth);
+        //jqeury转化为dom
+        $('div')[0].offsetWidth;
+        console.log('jQuery信息:' + $('div').get(0).offsetWidth);
+
+
+
+    })
+</script>
+
+
+</html>
