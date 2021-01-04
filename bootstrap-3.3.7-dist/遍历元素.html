@@ -10,21 +10,43 @@
 </head>
 
 <body>
+    <!-- 对元素进行节点操作 -->
     <!-- $('div').each(function(index ,domEle){  })index 为索引号 domEle为Dom节点 -->
     <div>1</div>
     <div>2</div>
     <div>3</div>
     <script>
         $(function () {
+            //$('div').each(function (index, domEle) { })index 为索引号 domEle为Dom节点
+            //遍历数组有难度
             //用两个数组循环给对应属性赋值
             arr = ['red', 'blue', 'pink'];
             bgcolor = ['brown', 'grey', 'green'];
-            $('div').each(function (i, e) {
-                //i代表索引号  e代表dom节点
-                $(e).css('backgroundColor', bgcolor[i]);//把dom节点e转换为jquery对象
-                $(this).css('color', arr[i]);
+            // $('div').each(function (i, e) {
+            //     //i代表索引号  e代表dom节点
+            //     $(e).css('backgroundColor', bgcolor[i]);//把dom节点e转换为jquery对象
+            //     $(this).css('color', arr[i]);
 
-            })
+            // })
+
+            // $.each(object,function(index,elem){})方法遍历元素 主要用于遍历数据，数据处理
+            //遍历数组方便
+            var sum = 0;
+            $.each($('div'), function (i, e) {
+
+
+                sum = parseInt($(this).text()) + sum;
+
+            });
+            //  console.log(sum);
+            $.each(arr, function (i, e) {
+
+                console.log(e);
+                //输出red blue pink
+
+
+
+            });
 
 
         })

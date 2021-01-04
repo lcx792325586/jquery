@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+    <div>
+
+        <ul>
+            <li>原来的小li</li>
+        </ul>
+
+
+    </div>
+    <script>
+
+        $(function () {
+            //    1.创建元素
+            var li = $('<li>加入的小li</li>');
+            var div = $(' <div>我是创建的div </div>');
+
+            //    2.外部添加  添加在ul的前面或者后面 
+            //   $('ul').before(div)
+            $('ul').after(div)
+            //   3.内部添加ul是父元素
+            $('ul').append(li);//追加在后面
+            $('ul').prepend(li);//追加在前面
+            //    4.删除元素
+            //  $('ul').remove();//删除ul节点 包括子节点
+            //$('ul').empty();//清空ul里的子元素
+            //  $('ul').html('');//清空ul里的子元素
+
+
+
+
+        })
+
+    </script>
+</body>
+
+</html>
