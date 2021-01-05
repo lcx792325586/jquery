@@ -95,6 +95,12 @@ $(function () {
 
         totalAll();
     });
+    $(".delete").click(function () {
+
+        $(this).parents('li').remove();
+        totalAll();
+
+    });
 
 
 })
