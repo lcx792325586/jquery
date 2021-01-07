@@ -37,6 +37,15 @@ $(function () {
         $('.select').prop('checked', $(this).prop('checked'));
         $('.select_all').prop('checked', $(this).prop('checked'));
         totalAll()
+        if ($(this).prop('checked') == true) {
+
+            $('ul li').addClass('background');
+        }
+        else {
+            $('ul li').removeClass('background');
+        }
+
+
     });
 
 
@@ -49,6 +58,13 @@ $(function () {
             $('.select_all').prop('checked', false)
         }
         totalAll()
+        if ($(this).prop('checked') == true) {
+
+            $(this).parents('li').addClass('background');
+        }
+        else {
+            $(this).parents('li').removeClass('background');
+        }
     });
     var num;
 
