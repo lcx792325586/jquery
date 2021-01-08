@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <style>
+        .box {
+            width: 400px;
+            height: 200px;
+            background-color: beige;
+        }
+
+        ol li {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+        <input type="text" class="input">
+        <button>发布</button>
+        <ol>
+
+        </ol>
+
+    </div>
+    <script>
+        $('button').click(function () {
+            var li = $('<li></li>');
+            li.html($('.input').val() + '<a href="javascript:; ">删除</a>');
+            //  li.html( $('.input').val() + '<a href='javascript:; '>删除</a>');//单、双引号必须分开使用。 混用会报错
+            $('ol').prepend(li);
+            li.slideDown();//下拉滑动效果 需要先隐藏元素
+            $('.input').val('')
+
+
+
+        })
+        // $('ul li a').click(function(){ 不能给动态创建的元素绑定事件
+        //     alert(1);//警告框不能弹出
+        // })
+        $('ol').on('click', 'li a', function () {// on（）事件委派可以给动态的元素绑定事件
+            $(this).parents('li').slideUp(function () {
+
+                $(this).remove()
+
+            });
+        })
+
+    </script>
+</body>
+
+</html>

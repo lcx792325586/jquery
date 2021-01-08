@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <style>
+        div {
+            margin-top: 1000px;
+            margin: 100px auto;
+            width: 1000px;
+            height: 100px;
+            background-color: royalblue;
+        }
+
+        span {
+            float: right;
+            background-color: salmon;
+
+        }
+
+        .footer {
+            float: left;
+            margin: 100px auto;
+            margin-top: 800px;
+            width: 1000px;
+            height: 200px;
+            background-color: royalblue;
+        }
+
+        .mid {
+            height: 1000px;
+            background-color: sandybrown;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        2
+    </div>
+    </div>
+    <div class="mid">
+        <div class="footer"><span>返回Top</span></div>
+    </div>
+    <div class="mid"></div>
+
+    <script>
+
+
+        $(function () {
+            $('.footer span').click(function () {
+
+                //  $(document).scrollTop(0);
+                $('body,html').animate({//body 和html元素同时滚动到顶端  只能元素做动画 document不可以
+                    scrollTop: 0
+                });
+
+
+            });
+
+            $(window).scroll(function () {//窗口滚动事件  窗口滚动时触发操作
+                // console.log($('.mid').height()/2);
+                // console.log($(document).scrollTop());
+                console.log($(document).scrollTop());
+                if ($(document).scrollTop() > 710) {
+
+                    $('.footer').show();
+
+                }
+                else {
+                    $('.footer').hide();
+
+                }
+
+
+
+
+            })
+
+
+
+        }
+        );
+
+    </script>
+</body>
+
+</html>

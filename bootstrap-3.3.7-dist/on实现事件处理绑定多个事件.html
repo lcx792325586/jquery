@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>on多个事件处理</title>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <style>
+        div {
+        
+            width: 200px;
+            height: 200px;
+            background-color: seagreen;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        $('div').on({
+            mouseover: function () {//on() 括号里以对象的方式 可以绑定多个事件
+
+                alert(1);
+            },
+            mouseleave: function () {
+                console.log(2);
+            }
+
+        })
+    </script>
+</body>
+
+</html>
